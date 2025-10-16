@@ -5,17 +5,21 @@ const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-primary/10 via-background to-accent">
-      <div className="text-center animate-fade-in space-y-8 px-4">
-        <h1 className="text-7xl md:text-8xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+    <div className="flex min-h-screen items-center justify-center relative overflow-hidden">
+      {/* Floating orb accents */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-[100px] animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full filter blur-[100px] animate-float" style={{ animationDelay: '3s' }} />
+      
+      <div className="text-center animate-fade-in space-y-8 px-4 relative z-10">
+        <h1 className="text-7xl md:text-9xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent tracking-tighter leading-none drop-shadow-[0_0_40px_hsl(var(--primary)/0.3)]">
           Quantum
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-md mx-auto">
+        <p className="text-xl md:text-2xl text-foreground/70 max-w-md mx-auto tracking-tight font-light">
           Your intelligent financial coach.
         </p>
         <Button 
           size="lg" 
-          className="mt-8 text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
+          className="mt-8 text-lg px-10 py-7 text-base font-semibold"
           onClick={() => navigate("/login")}
         >
           Get Started

@@ -27,9 +27,9 @@ const TransactionList = ({ transactions }: TransactionListProps) => {
   };
 
   return (
-    <Card className="shadow-xl">
+    <Card className="hover:shadow-[0_8px_50px_rgba(0,0,0,0.5)] transition-all duration-300">
       <CardHeader>
-        <CardTitle className="text-lg">Recent Transactions</CardTitle>
+        <CardTitle className="text-lg tracking-tight">Recent Transactions</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-3 max-h-[500px] overflow-y-auto">
@@ -38,17 +38,18 @@ const TransactionList = ({ transactions }: TransactionListProps) => {
               No transactions yet. They will appear automatically.
             </p>
           ) : (
-            transactions.map((transaction) => (
+            transactions.map((transaction, index) => (
               <div
                 key={transaction.id}
-                className="flex items-center justify-between p-4 rounded-lg bg-accent/50 hover:bg-accent transition-colors animate-slide-in"
+                style={{ animationDelay: `${index * 0.05}s` }}
+                className="flex items-center justify-between p-4 rounded-xl bg-card/30 backdrop-blur-sm hover:bg-card/50 border border-border/50 transition-all duration-200 animate-slide-in hover:scale-[1.01] hover:shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-full bg-background">
+                  <div className="p-2 rounded-full bg-background/50 backdrop-blur-sm border border-border/50">
                     {getIcon(transaction.type)}
                   </div>
                   <div>
-                    <p className="font-medium capitalize">
+                    <p className="font-medium capitalize tracking-tight">
                       {transaction.note || transaction.type}
                     </p>
                     <p className="text-xs text-muted-foreground">

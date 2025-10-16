@@ -90,6 +90,16 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "fade-slide": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-8px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
         "scale-in": {
           "0%": {
             transform: "scale(0.95)",
@@ -106,8 +116,40 @@ export default {
             opacity: "0",
           },
           "100%": {
-            transform: "translateY(0)",
             opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "lift": {
+          "0%": {
+            transform: "translateY(0)",
+          },
+          "100%": {
+            transform: "translateY(-4px)",
+          },
+        },
+        "glow": {
+          "0%, 100%": {
+            filter: "drop-shadow(0 0 8px hsl(var(--primary) / 0.5))",
+          },
+          "50%": {
+            filter: "drop-shadow(0 0 16px hsl(var(--primary) / 0.8))",
+          },
+        },
+        "pulse-glow": {
+          "0%, 100%": {
+            boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
+          },
+          "50%": {
+            boxShadow: "0 0 35px hsl(var(--primary) / 0.6)",
+          },
+        },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
           },
         },
       },
@@ -115,8 +157,16 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.6s ease-out",
+        "fade-slide": "fade-slide 0.24s ease-out",
         "scale-in": "scale-in 0.3s ease-out",
         "slide-in": "slide-in 0.3s ease-out",
+        "lift": "lift 0.18s ease-out",
+        "glow": "glow 2s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
+      },
+      backdropBlur: {
+        xs: "2px",
       },
     },
   },
