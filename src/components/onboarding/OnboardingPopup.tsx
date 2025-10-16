@@ -120,12 +120,12 @@ const OnboardingPopup = () => {
 
             <div className="space-y-4">
               {/* Title */}
-              <h3 className="text-xl font-bold text-foreground leading-tight pr-8">
+              <h3 className="text-xl font-bold text-slate-900 leading-tight pr-8">
                 {currentStepData.title}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+              <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-line">
                 {currentStepData.description}
               </p>
 
