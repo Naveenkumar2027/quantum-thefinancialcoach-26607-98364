@@ -58,10 +58,10 @@ const AIInsightBox = ({ lastTransaction }: AIInsightBoxProps) => {
 
   if (!lastTransaction) {
     return (
-      <Card className="shadow-lg border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5">
+      <Card className="shadow-glass border border-primary/20 bg-gradient-to-br from-white/80 to-primary/5">
         <CardContent className="p-4">
           <div className="flex items-center gap-2 text-muted-foreground">
-            <Sparkles className="w-5 h-5 text-primary" />
+            <Sparkles className="w-5 h-5 text-primary transition-transform hover:scale-[1.05] hover-glow" />
             <span className="text-sm">AI insights will appear here after transactions</span>
           </div>
         </CardContent>
@@ -78,14 +78,14 @@ const AIInsightBox = ({ lastTransaction }: AIInsightBoxProps) => {
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.3 }}
       >
-        <Card className="shadow-lg border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-accent/20">
+        <Card className="shadow-glass border border-primary/20 bg-gradient-to-br from-primary/8 to-accent/10">
           <CardContent className="p-4">
             <div className="flex items-start gap-3">
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               >
-                <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5 transition-transform hover:scale-[1.05] hover-glow" />
               </motion.div>
               <p className="text-sm font-medium text-foreground flex-1">
                 {displayedText}

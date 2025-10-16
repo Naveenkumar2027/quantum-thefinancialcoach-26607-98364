@@ -8,15 +8,15 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark glass theme - Premium cinematic palette */
-    --background: 211 48% 6%;
-    --foreground: 0 0% 95%;
+    /* Light glass theme - Award-level premium palette */
+    --background: 248 100% 99%;
+    --foreground: 222 47% 11%;
 
-    --card: 0 0% 100% / 0.05;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100% / 0.7;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 211 48% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
     --primary: 207 89% 64%;
     --primary-foreground: 0 0% 100%;
@@ -24,8 +24,8 @@ All colors MUST be HSL.
     --secondary: 142 76% 45%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 100% / 0.06;
-    --muted-foreground: 0 0% 65%;
+    --muted: 222 47% 11% / 0.04;
+    --muted-foreground: 215 16% 47%;
 
     --accent: 258 90% 66%;
     --accent-foreground: 0 0% 100%;
@@ -36,77 +36,29 @@ All colors MUST be HSL.
     --success: 142 76% 45%;
     --success-foreground: 0 0% 100%;
 
-    --border: 0 0% 100% / 0.08;
-    --input: 0 0% 100% / 0.08;
+    --border: 222 47% 11% / 0.06;
+    --input: 222 47% 11% / 0.08;
     --ring: 207 89% 64%;
 
     --radius: 1rem;
 
-    --sidebar-background: 211 48% 6%;
-    --sidebar-foreground: 0 0% 90%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
     --sidebar-primary: 207 89% 64%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 100% / 0.05;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 100% / 0.08;
+    --sidebar-accent: 222 47% 11% / 0.04;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 222 47% 11% / 0.06;
     --sidebar-ring: 207 89% 64%;
 
     /* Gradient stops */
-    --gradient-start: 211 48% 6%;
-    --gradient-end: 211 48% 8%;
+    --gradient-start: 248 100% 99%;
+    --gradient-end: 0 0% 100%;
     
     /* Glow colors */
-    --glow-primary: 207 89% 64% / 0.5;
-    --glow-secondary: 142 76% 45% / 0.5;
-    --glow-accent: 258 90% 66% / 0.5;
-  }
-
-  .dark {
-    --background: 211 48% 6%;
-    --foreground: 0 0% 95%;
-
-    --card: 0 0% 100% / 0.05;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 211 48% 8%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 207 89% 64%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 142 76% 45%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 0% 100% / 0.06;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 258 90% 66%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 0 0% 100% / 0.08;
-    --input: 0 0% 100% / 0.08;
-    --ring: 207 89% 64%;
-    
-    --sidebar-background: 211 48% 6%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 207 89% 64%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 100% / 0.05;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 100% / 0.08;
-    --sidebar-ring: 207 89% 64%;
-
-    /* Gradient stops */
-    --gradient-start: 211 48% 6%;
-    --gradient-end: 211 48% 8%;
-    
-    /* Glow colors */
-    --glow-primary: 207 89% 64% / 0.5;
-    --glow-secondary: 142 76% 45% / 0.5;
-    --glow-accent: 258 90% 66% / 0.5;
+    --glow-primary: 207 89% 64% / 0.12;
+    --glow-secondary: 142 76% 45% / 0.12;
+    --glow-accent: 258 90% 66% / 0.12;
   }
 }
 
@@ -117,21 +69,23 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground tracking-tight;
-    background: radial-gradient(ellipse at top center, hsl(var(--gradient-end)), hsl(var(--gradient-start)) 50%);
+    background: 
+      radial-gradient(60% 40% at 50% -10%, hsl(var(--glow-primary)), transparent 60%),
+      linear-gradient(hsl(var(--gradient-start)), hsl(var(--gradient-end)));
     min-height: 100vh;
     position: relative;
   }
 
-  /* Grain/noise overlay */
+  /* Ultra-subtle grain overlay */
   body::before {
     content: "";
     position: fixed;
     inset: 0;
+    z-index: 0;
     pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.05;
-    mix-blend-mode: overlay;
-    z-index: 1;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
   }
 
   /* Floating orbs background effect */
@@ -146,7 +100,7 @@ All colors MUST be HSL.
     background: radial-gradient(circle, hsl(var(--glow-primary)) 0%, transparent 70%);
     filter: blur(80px);
     pointer-events: none;
-    opacity: 0.3;
+    opacity: 0.15;
     z-index: 0;
     animation: float 20s ease-in-out infinite;
   }
@@ -160,5 +114,18 @@ All colors MUST be HSL.
   #root {
     position: relative;
     z-index: 2;
+  }
+
+  /* Utility helpers */
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, #45A7FF 0%, #A78BFA 100%);
+  }
+  
+  .hover-glow {
+    filter: drop-shadow(0 6px 18px rgba(69, 167, 255, 0.25));
+  }
+  
+  .ring-brand {
+    box-shadow: 0 0 0 3px rgba(69, 167, 255, 0.18);
   }
 }

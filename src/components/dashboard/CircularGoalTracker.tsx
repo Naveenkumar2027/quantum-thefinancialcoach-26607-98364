@@ -114,11 +114,11 @@ const CircularGoalTracker = ({ currentBalance, goal }: CircularGoalTrackerProps)
 
       {/* Details */}
       <div className="grid grid-cols-2 gap-3 w-full">
-        <div className="bg-accent/30 rounded-lg p-3 border border-primary/10 text-center">
+        <div className="bg-white/60 backdrop-blur rounded-lg p-3 border border-black/10 text-center">
           <div className="text-xs text-muted-foreground mb-1">Current</div>
           <div className="text-sm font-bold">₹{currentBalance.toLocaleString()}</div>
         </div>
-        <div className="bg-accent/30 rounded-lg p-3 border border-primary/10 text-center">
+        <div className="bg-white/60 backdrop-blur rounded-lg p-3 border border-black/10 text-center">
           <div className="text-xs text-muted-foreground mb-1">Goal</div>
           <div className="text-sm font-bold text-primary">₹{goal.toLocaleString()}</div>
         </div>

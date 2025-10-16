@@ -61,7 +61,7 @@ const FinancialCoach = ({ currentBalance, goal }: FinancialCoachProps) => {
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
           className="fixed bottom-6 right-6 z-50 max-w-sm"
         >
-          <div className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground rounded-2xl shadow-2xl p-5 relative">
+          <div className="bg-brand-gradient text-white rounded-2xl shadow-[0_20px_60px_rgba(69,167,255,0.3)] p-5 relative border border-white/10">
             <button
               onClick={() => setIsVisible(false)}
               className="absolute top-3 right-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"

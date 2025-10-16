@@ -27,7 +27,7 @@ const TransactionList = ({ transactions }: TransactionListProps) => {
   };
 
   return (
-    <Card className="hover:shadow-[0_8px_50px_rgba(0,0,0,0.5)] transition-all duration-300">
+    <Card className="hover:shadow-[0_8px_40px_rgba(2,6,23,0.14)] transition-all duration-300">
       <CardHeader>
         <CardTitle className="text-lg tracking-tight">Recent Transactions</CardTitle>
       </CardHeader>
@@ -42,7 +42,7 @@ const TransactionList = ({ transactions }: TransactionListProps) => {
               <div
                 key={transaction.id}
                 style={{ animationDelay: `${index * 0.05}s` }}
-                className="flex items-center justify-between p-4 rounded-xl bg-card/30 backdrop-blur-sm hover:bg-card/50 border border-border/50 transition-all duration-200 animate-slide-in hover:scale-[1.01] hover:shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                className="flex items-center justify-between p-4 rounded-xl bg-white/60 backdrop-blur border border-black/10 hover:bg-white/80 transition-all duration-200 animate-slide-in hover:scale-[1.01] hover:shadow-glass"
               >
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-full bg-background/50 backdrop-blur-sm border border-border/50">

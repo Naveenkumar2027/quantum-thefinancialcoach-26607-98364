@@ -143,7 +143,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/10">
+    <div className="min-h-screen">
       <Navigation />
 
       {/* Main Content */}

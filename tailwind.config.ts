@@ -57,6 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        brand: {
+          blue: "#45A7FF",
+          green: "#22C55E",
+          violet: "#A78BFA"
+        },
+      },
+      boxShadow: {
+        glass: "0 8px 30px rgba(2, 6, 23, 0.08)"
       },
       borderRadius: {
         lg: "var(--radius)",

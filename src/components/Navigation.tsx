@@ -10,7 +10,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav id="navigation" className="border-b border-border/50 bg-background/60 backdrop-blur-xl sticky top-0 z-10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
+    <nav id="navigation" className="border-b border-black/10 bg-white/60 backdrop-blur-xl sticky top-0 z-10 shadow-glass">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <motion.h1 
           initial={{ opacity: 0, x: -20 }}
@@ -34,19 +34,19 @@ const Navigation = () => {
                   className={({ isActive }) =>
                     `relative px-6 py-2.5 rounded-full font-medium transition-all duration-200 flex items-center gap-2 ${
                       isActive
-                        ? "bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.5)] scale-[1.02]"
-                        : "bg-card/40 backdrop-blur-sm text-foreground/80 hover:bg-card/60 hover:text-foreground hover:scale-[1.02] border border-border/50"
+                        ? "bg-brand-gradient text-white shadow-[0_0_20px_rgba(69,167,255,0.25)] scale-[1.02]"
+                        : "bg-white/60 backdrop-blur border border-black/10 text-foreground hover:bg-white/80 hover:scale-[1.02]"
                     }`
                   }
                 >
                   {({ isActive }) => (
                     <>
-                      <Icon className={`w-4 h-4 ${isActive ? 'animate-glow' : ''}`} />
+                      <Icon className={`w-4 h-4 transition-transform hover:scale-[1.05] ${isActive ? 'hover-glow' : ''}`} />
                       <span>{item.label}</span>
                       {isActive && (
                         <motion.div
                           layoutId="activeTab"
-                          className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full -z-10"
+                          className="absolute inset-0 bg-brand-gradient rounded-full -z-10"
                           initial={false}
                           transition={{ type: "spring", stiffness: 380, damping: 30 }}
                         />

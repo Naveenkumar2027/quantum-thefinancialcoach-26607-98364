@@ -25,12 +25,12 @@ const NotificationModal = ({ isOpen, onClose, overspendAmount, currentBalance, g
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Translucent backdrop with blur */}
       <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-md animate-fade-in"
+        className="absolute inset-0 bg-black/40 backdrop-blur-md animate-fade-in"
         onClick={onClose}
       />
       
       {/* Modal card with enhanced animations */}
-      <div className="relative bg-card/40 backdrop-blur-2xl rounded-2xl shadow-[0_20px_80px_rgba(0,0,0,0.6)] max-w-md w-full p-8 animate-[fade-in_0.3s_ease-out,scale-in_0.2s_ease-out] border border-border">
+      <div className="relative bg-white/70 backdrop-blur-2xl rounded-2xl shadow-[0_20px_80px_rgba(2,6,23,0.2)] max-w-md w-full p-8 animate-[fade-in_0.3s_ease-out,scale-in_0.2s_ease-out] border border-black/5">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-all hover:scale-110 hover:rotate-90 duration-200"
@@ -49,7 +49,7 @@ const NotificationModal = ({ isOpen, onClose, overspendAmount, currentBalance, g
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-card/60 to-card/30 backdrop-blur-sm rounded-xl p-4 space-y-3 border border-border/50">
+          <div className="bg-white/60 backdrop-blur rounded-xl p-4 space-y-3 border border-black/10">
             <div className="flex justify-between items-center">
               <span className="text-muted-foreground font-medium">Current Balance:</span>
               <span className="font-bold text-lg text-primary">₹{currentBalance.toLocaleString()}</span>
@@ -63,7 +63,7 @@ const NotificationModal = ({ isOpen, onClose, overspendAmount, currentBalance, g
 
           <button
             onClick={onClose}
-            className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary hover:to-accent rounded-xl py-3 px-6 font-semibold transition-all hover:scale-[1.02] active:scale-95 shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] duration-200"
+            className="w-full bg-brand-gradient text-white hover:scale-[1.02] hover-glow active:scale-95 rounded-2xl py-3 px-6 font-semibold transition-all duration-200"
           >
             Got it! I'll be careful 🎯
           </button>
