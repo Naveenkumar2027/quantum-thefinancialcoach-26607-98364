@@ -1,0 +1,8 @@
+Place the new favicon image you provided in this folder and name it `favicon.png`.
+This project expects the favicon at `/favicon.png` and `index.html` has been updated to reference it.
+
+Recommended sizes: 32x32 or 48x48 PNG. Modern browsers will accept larger sizes (e.g., 512x512) and scale down as needed.
+
+If you want to replace the existing ICO instead, you can also convert the PNG to favicon.ico and overwrite `favicon.ico`.
+
+After adding the file, reload the dev server and clear the browser cache (or open an incognito window) to see the new favicon.
